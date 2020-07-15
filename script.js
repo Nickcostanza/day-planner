@@ -6,7 +6,7 @@ $('#currentDay').text(current);
 console.log(current); 
 
 
-//add time slot to planner(SO MUCH EXTRA CODE..I KNOW Lol)
+//add time slot to planner(not dry code)
 var hourNine = moment().hour('9').format('h');
 var hourTen = moment().hour('10').format('h');
 var hourEleven = moment().hour('11').format('h');
@@ -19,6 +19,7 @@ var hourFive = moment().hour('5').format('h');
 
 var hours = [hourNine, hourTen, hourEleven, hourTwelve, hourOne, hourTwo, hourThree, hourFour, hourFive];
 
+
 $("#hourNine").text(hourNine + "AM");
 $("#hourTen").text(hourTen + "AM");
 $("#hourEleven").text(hourEleven + "AM");
@@ -30,9 +31,21 @@ $("#hourFour").text(hourFour + "PM");
 $("#hourFive").text(hourFive + "PM");
 
 //create a function that changes colors of time slots as the day
-//goes on past/present/future
+//goes on past/present/future(NOT WORKING YET)
+function changeColor(){
+
+if (moment() > hours)
+    ('#row').addClass('past')
+
+else if(moment() < hours)
+    ('#row').addClass('future')
 
 
 
+};
+
+changeColor();
 //locally store the information put in to the time slots
-//refresh every morning
+
+
+
